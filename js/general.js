@@ -179,7 +179,6 @@
 		
 		$(window).scroll( function(){
 		if( $('.section').length){
-			var $section = $('.section').offset().top/2;
 				if ($(window).scrollTop() > $('.section').offset().top/2 ){
 					$('.section').removeClass('fixed');
 					$('.fp-completely').prev('div').addClass('fixed');
