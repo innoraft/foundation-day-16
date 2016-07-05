@@ -1,0 +1,40 @@
+/* only ipad 1024 and bigger screen landscape screen */
+@media only screen and (min-width:768px) {
+	#mainmenu > ul { display:block !important; }
+}
+
+@media only screen and (max-width:1200px) {
+	#mainmenu > .wrap > ul > li > a { font-size:14px; padding:0 10px; }
+	#mainmenu li { line-height:50px; }
+}
+
+
+/*==========================================================================================================*/
+@media only screen and (max-width:1023px) {
+	body { min-width:320px; }
+	img{ max-width:100%; width:auto; height:auto; }
+} 
+
+@media only screen and (max-width:1000px) {
+}
+
+/*==========================================================================================================*/
+@media only screen and (max-width:767px) {
+	
+}
+/*==========================================================================================================*/
+/* only iphone4 landscape & Potriat 300 by 480*/
+@media only screen and (max-width:640px) {
+}
+
+@media only screen and (max-width:568px) {
+}
+/*==========================================================================================================*/
+/* only iphone landscape 340 by 478*/
+@media only screen and (max-width:480px) {
+
+}
+/*==========================================================================================================*/
+/* only iphone portrait 300 by 479*/
+@media only screen and (max-width:479px) {
+} 
