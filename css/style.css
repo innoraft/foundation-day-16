@@ -106,9 +106,18 @@ input[type="checkbox"], input[type="radio"] { margin:4px 8px 0; vertical-align:t
 .ms-left { z-index:10; }
 .ms-section.ms-table.active#right1  { background-image:url(../images/bg-01.jpg); background-size:cover; }
 
+.fp-section.fp-table.active { z-index:1; position:relative; }
+body,html { overflow:hidden; height:1800px; }
 
 #header { position:fixed; width:100%; left:0;  top:0; padding:30px 20px 0; z-index:20; }
 #logo { width:234px; display:inline-block; }
 #logo img { max-width:100%; height:auto; width:100%; }
 
+.section { position:relative; }
+.section .right-section { width:50%; height:100%; position:fixed; right:0; top:0; }
+.section .left-section { width:50%; height:100%; position:fixed; left:0; background:#003352; top:0; }
 
+#section0 .right-section { background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.fixed{ position:fixed; width:100%; left:0; top:0; z-index:-1; }
+#section1:before,  #section2:before  { content:""; width:50%; height:100%; position:absolute; left:0; top:0; background:url(../images/bg2.jpg) 0  0 no-repeat; }
+#section2:before { left:auto; right:0; background:url(../images/bg5.jpg) 0  0 no-repeat; }

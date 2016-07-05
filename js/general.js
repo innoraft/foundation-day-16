@@ -167,22 +167,28 @@
 		});
 		
 		
-		/* Slider
-		----------------------------------------------------------------------------------------*/
-		$('#myContainer').multiscroll({
-			sectionsColor: ['rgba(0,51,82,0.85)', '#DE564B', '#EAE1C0'],
-			anchors: ['first', 'second', 'third'],
-			navigation: true,
-			onLeave: function(index, direction){
-          	  //after leaving section 2
-           		 if(index == '2' && direction =='down'){
-                	alert("Going to section 3!");
-            	}
-            	else if(index == '2' && direction == 'up'){
-                alert("Going to section 1!");
-            }
-        }
+		$('#fullpage').fullpage({
+			anchors: ['firstPage', 'fifthSection', '3rdPage'],
+			sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+			css3: true,
+			'navigation': true,
+			'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+			scrollBar:true			
 		});
+		
+		
+		$(window).scroll( function(){
+		if( $('.section').length){
+			var $section = $('.section').offset().top/2;
+				if ($(window).scrollTop() > $('.section').offset().top/2 ){
+					$('.section').removeClass('fixed');
+					$('.fp-completely').prev('div').addClass('fixed');
+				} else { 
+					$('.fp-completely').prev('div').removeClass('fixed');
+				}
+			}
+		});
+
 		
 		
 		

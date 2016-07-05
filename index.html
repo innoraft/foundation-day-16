@@ -13,7 +13,7 @@
 	<link rel="shortcut icon" href="images/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic,300,300italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/vendor/jquery.multiscroll.css">
+    <link rel="stylesheet" href="css/vendor/jquery.fullPage.css">
     <link rel="stylesheet" href="css/responsive.css">
     
 	<script src="js/vendor/modernizr.min.js"></script>
@@ -28,33 +28,32 @@
             </figure>
         </a>
     </header><!--/#header-->
-	<div id="myContainer">
-	<div class="ms-left">
-		<div class="ms-section" id="left1">
-			<h1>Left 1</h1>
-		</div>
-
-		<div class="ms-section" id="left2">
-			<h1>Left 2 </h1>
-		</div>
-
-		<div class="ms-section" id="left3">
-			<h1>Left 3</h1>
-		</div>
-	</div>
-	
-	<div class="ms-right">
-		<div class="ms-section" id="right1">&nbsp;</div>
-
-		<div class="ms-section" id="right2">
-			<h1>Right 2</h1>
-		</div>
-
-		<div class="ms-section" id="right3">
-			<h1>Right 3</h1>
-		</div>
-	</div>	
-</div>
+	<div id="fullpage">
+        <div class="section " id="section0">
+            <div class="intro">
+                <div class="left-section">
+                &nbsp;	
+                </div><!--/.left-section-->
+                <div class="right-section">
+                    &nbsp;
+                </div>
+                <h1>Fixed elements</h1>
+                <p>Create your own headers and footers</p>
+            </div>
+        </div>
+        <div class="section" id="section1">
+             <div class="intro">
+                <h1>Enjoy it</h1>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1>Enjoy it</h1>
+            </div>
+        </div>
+        
+        
+    </div>
 </div><!--/#wrapper-->
 
 
@@ -63,7 +62,6 @@
 </body>
 
 <script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/jquery.easings.min.js"></script>
-<script src="js/vendor/jquery.multiscroll.js"></script>
+<script src="js/vendor/jquery.fullPage.js"></script>
 <script src="js/general.js"></script>
 </html>
