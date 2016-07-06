@@ -167,30 +167,61 @@
 		});
 		
 		
-		$('#fullpage').fullpage({
-			anchors: ['firstPage', 'fifthSection', '3rdPage'],
-			sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-			css3: true,
-			'navigation': true,
-			'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
-			scrollBar:true			
-		});
-		
-		
-		$(window).scroll( function(){
-		if( $('.section').length){
-				if ($(window).scrollTop() > $('.section').offset().top/2 ){
-					$('.section').removeClass('fixed');
-					$('.fp-completely').prev('div').addClass('fixed');
-				} else { 
-					$('.fp-completely').prev('div').removeClass('fixed');
+		$('#pagepiling').pagepiling({
+			menu: '#menu',
+			scrollingSpeed:700,
+			navigation: {
+				'textColor': '#f2f2f2',
+				'bulletsColor': '#ffffff',
+				'position': 'right',
+				'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4'],
+			},
+			afterLoad: function(anchorLink, index){
+				setTimeout(function(){ 
+						$('#section1').each(function() {
+							var $this = $(this);
+								$this.find('.animate').each(function(i) {
+									var $item = $(this);
+									var animation = $item.data("animate");
+									setTimeout( function () {
+										$item.addClass('animated '+animation).removeClass('animate');
+									}, i*10 );
+								});
+							});	
+				}, 1100);
+			},
+			onLeave: function(index, nextIndex, direction){
+				//after leaving section 2
+				if(index == 2 && direction == 'down'){
+				   $('.section').eq(index -1).find('.left-section').addClass('fullWidth');
 				}
-			}
+	
+				if(index == 1 && direction == 'down'){
+					$('#section1').each(function() {
+						var $this = $(this);
+							$this.find('.animated').each(function(i) {
+								var $item = $(this);
+								var animation = $item.data("animate");
+								$item.removeClass('animated '+animation).addClass('animate');
+							});
+						});
+					}
+				},
+				afterRender: function(){
+					setTimeout(function(){ 
+						$('#section1').each(function() {
+							var $this = $(this);
+								$this.find('.animate').each(function(i) {
+									var $item = $(this);
+									var animation = $item.data("animate");
+									setTimeout( function () {
+										$item.addClass('animated '+animation).removeClass('animate');
+									}, i*100 );
+								});
+							});
+					}, 400);
+				}
 		});
-
-		
-		
-		
 /*--------------------------------------------------------------------------------------------------------------------------------------*/		
 	});	
 /*--------------------------------------------------------------------------------------------------------------------------------------*/

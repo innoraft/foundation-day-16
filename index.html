@@ -10,58 +10,62 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="shortcut icon" href="images/favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic,300,300italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/vendor/jquery.fullPage.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vendor/jquery.pagepiling.css">
+    <link rel="stylesheet" href="css/vendor/animate.css">
     <link rel="stylesheet" href="css/responsive.css">
-    
 	<script src="js/vendor/modernizr.min.js"></script>
 </head>
 
 <body>
-<div id="wrapper">
-	<header id="header">
-    	<a href="#" id="logo">
-            <figure>
-                <img src="images/logo.png" alt="Innoraft Solutions">
-            </figure>
-        </a>
-    </header><!--/#header-->
-	<div id="fullpage">
-        <div class="section " id="section0">
-            <div class="intro">
-                <div class="left-section">
-                &nbsp;	
-                </div><!--/.left-section-->
-                <div class="right-section">
-                    &nbsp;
-                </div>
-                <h1>Fixed elements</h1>
-                <p>Create your own headers and footers</p>
+<div id="wrapper">	
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+        	<div id="large-header" class="large-header">
+                <canvas id="canvas-circle"></canvas>
+                <div class="section-container">
+                    <div class="section-box">
+                    	<div class="section-info">
+                            <figure class="logo animate" data-animate="fadeInDownBig">
+                        		<img src="images/logo.png" alt="Innoraft Solutions">
+                    		</figure><!--/.logo-->
+                            <div class="title-container-box">
+                                <div class="title-box">
+                                    <h1 class="animate" data-animate="fadeInLeftBig"><span>Years of</span>5</h1>
+                                    <div class="title-box">
+                                        <div class="title-right">
+                                            <span class="left-subtitle animate" data-animate="fadeInDownBig">Celbrating</span>
+                                            <div class="animate" data-animate="fadeInRightBig">Growth</div>
+                                            <span class="right-subtitle animate" data-animate="fadeInDownBig">&amp; Success</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/.section-info-->
+                    </div><!--/.section-box-->
+                </div><!--/.section-container-->
             </div>
-        </div>
-        <div class="section" id="section1">
-             <div class="intro">
-                <h1>Enjoy it</h1>
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <div class="intro">
-                <h1>Enjoy it</h1>
-            </div>
-        </div>
-        
-        
-    </div>
+	    </div>
+	    <div class="section" id="section2">
+	    	<div class="left-section">&nbsp;</div><!--/.left-section-->
+            <div class="right-section">&nbsp;</div>
+	    </div>
+	    <div class="section" id="section3">
+	    	<div class="left-section">&nbsp;</div><!--/.left-section-->
+            <div class="right-section">&nbsp;</div>
+	    </div>
+	</div>
+
 </div><!--/#wrapper-->
 
 
 
     
 </body>
-
 <script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/jquery.fullPage.js"></script>
+<script src="js/vendor/jquery.pagepiling.js"></script>
 <script src="js/general.js"></script>
+<script src="js/vendor/raf.js"></script>
+<script src="js/vendor/circle-animation.js"></script>
 </html>
