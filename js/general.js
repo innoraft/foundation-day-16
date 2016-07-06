@@ -195,6 +195,10 @@
 				if(index == 2 && direction == 'down'){
 				   $('.section').eq(index -1).find('.left-section').addClass('fullWidth');
 				}
+				
+				if(index == 3 && direction == 'up'){
+				   $('.section').eq(index -1).prev('div').find('.left-section').removeClass('fullWidth');
+				}
 	
 				if(index == 1 && direction == 'down'){
 					$('#section1').each(function() {
