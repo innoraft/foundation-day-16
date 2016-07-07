@@ -1,3 +1,32 @@
+
+
+.fullpage-wrapper { width:100%!important; transform:none !important; }
+.fp-section { width:100%!important; position:absolute; left:0; top:0; height:100%; opacity:0; z-index:0;transition:all 0.5s ease-in; }
+.fp-section.active { visibility:visible; opacity:1; z-index:1; position:absolute; }
+
+/*.curtain { background: #dadada; position:absolute; top:0; height:100%; width:100%; max-width:100%; transition:all 0.5s ease-in-out; z-index:10; width:100%; padding:50px; font-size:50px; }*/
+.text-placeholder { position:absolute; left:0; top:0; height:100%; padding:15px 30px; }
+.curtain.xswidth { left:0; top:0; height:100%;  width:50%; /*color:black;*/ }
+.curtain.xswidth.left-align { right:0; left:auto; }
+.year { font-size:20px; /*color:#fff;*/ }
+
+
+.left-container, .right-container { position:absolute; left:0; width:50%; top:0; z-index:10; height:100%; }
+.right-container { left:auto; right:0; }
+.section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
+.section1 .left-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
+/*.section2 .left-container { z-index:100; background:#003352; }*/
+.section2 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section3 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section4 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section5 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.text-container { display:none; }
+
+
+
+
+
+
 /* =CSS Reset
 ========================================================================================*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, strike, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; }
@@ -128,7 +157,7 @@ body,html { overflow:hidden; height:1800px; }
 .section0 .logo img { width:100%; height:auto; }
 .section h1 { display:inline-block; vertical-align:middle; font-family:'Lovelob',Arial, Helvetica, sans-serif; font-size:275px; line-height:0.90; letter-spacing:0.02em; color:#fff; }
 .section h1 span { display:block; font-size:18px; line-height:1; font-family:'Open Sans', Arial, Helvetica, sans-serif; }
-.title-right { display:inline-block; text-align:left; line-height:1.25;  vertical-align:middle; font-family:'Lovelob',Arial, Helvetica, sans-serif; font-size:70px; color:#fff; }
+.title-right { display:inline-block; text-align:left; line-height:1.25;  vertical-align:middle; font-family:'Lovelob',Arial, Helvetica, sans-serif; font-size:70px; /*color:#fff;*/ }
 .title-right.xs-size { font-size:36px; margin:0 0 15px; }
 .title-right span { display:block; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:18px; font-weight:normal; text-transform:uppercase; letter-spacing:0.075em; margin-left:5px; }
 .title-right span.right-subtitle { text-align:right; }
@@ -142,23 +171,88 @@ body,html { overflow:hidden; height:1800px; }
 .section-box { display:table; width:100%; height:100%; }
 .section-info { display:table-cell; vertical-align:middle; }
 .section-info p { font-size:14px; color:#fff; }
-
-.fullpage-wrapper { width:100%!important; transform:none !important; }
-.curtain { position:absolute; top:0; height:100%; width:100%; max-width:100%; transition:all 0.5s ease-in-out; z-index:10; width:100%; padding:50px; font-size:50px; }
-.text-placeholder { position:absolute; left:0; top:0; height:100%; padding:15px 30px; }
-.curtain.xswidth { left:0; top:0; height:100%;  width:50%; color:black; }
-.curtain.xswidth.left-align { right:0; left:auto; }
 .year { font-size:20px; color:#fff; }
 
-.curtain.full,.curtain.fullWidth {  width:100%; }
-.curtain.fullWidth { opacity:0; visibility:hidden; width:0 !important; }
-.fullpage-wrapper { width:100%!important; transform:none!important; }
-.fp-section { width:100%!important; position:absolute; left:0; top:0; height:100%; opacity:0; z-index:0;transition:all 0.5s ease-in; }
-.fp-section.active { visibility:visible; opacity:1; z-index:1; position:absolute; }
-.left-container, .right-container { position:absolute; left:0; width:50%; top:0; z-index:10; height:100%; }
-.right-container { left:auto; right:0; }
-.section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
+
+.fullpage-wrapper {
+  width: 100%!important;
+  transform: none!important;
+}
+
+.fp-section {
+  width: 100%!important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+.fp-section.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+/*.hash-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}*/
+
+.wrapper {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%
+}
+.left-container, .right-container {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+}
+
+.curtain {
+  /*display: none;*/
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  /*float: left;*/
+  transition: all .7s ease-in-out;
+  z-index: 10;
+  width: 100%;
+  background: black;
+  font-size: 50px;
+  overflow: hidden;
+}
+.curtain.white {
+  left: 0;
+  right: initial;
+  background: #dadada;
+  width: 50%;
+  color: #003352;
+}
+.curtain.black {
+  background: #000000;
+  left: initial;
+  right: 0;
+  width: 50%;
+  color: #ff7900;
+}
+.curtain.open {
+  width: 0%;
+}
+.curtain.full {
+  width: 100%;
+}
+
+.section0 .right-container { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
 .section1 .left-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
-.section2 .left-container { z-index:100; background:#003352; }
 .section2 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section3 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section4 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
 .text-container { display:none; }
