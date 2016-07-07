@@ -144,88 +144,92 @@
 		---------------------------------------------------------------------*/
 		$('.accordion-databox').each(function(index, element) {
 			var $accordion = $(this),
-				$accordionTrigger = $accordion.find('.accordion-trigger'),
-				$accordionDatabox = $accordion.find('.accordion-data');
-				
-				$accordionTrigger.first().addClass('open');
-				$accordionDatabox.first().show();
-				
-				$accordionTrigger.on('click',function (e) {
-					var $this = $(this);
-					var $accordionData = $this.next('.accordion-data');
-					if( $accordionData.is($accordionDatabox) &&  $accordionData.is(':visible') ){
-						$this.removeClass('open');
-						$accordionData.slideUp(400);
-						e.preventDefault();
-					} else {
-						$accordionTrigger.removeClass('open');
-						$this.addClass('open');
-						$accordionDatabox.slideUp(400);
-						$accordionData.slideDown(400);
-					}
-				})
+			$accordionTrigger = $accordion.find('.accordion-trigger'),
+			$accordionDatabox = $accordion.find('.accordion-data');
+			
+			$accordionTrigger.first().addClass('open');
+			$accordionDatabox.first().show();
+			
+			$accordionTrigger.on('click',function (e) {
+				var $this = $(this);
+				var $accordionData = $this.next('.accordion-data');
+				if( $accordionData.is($accordionDatabox) &&  $accordionData.is(':visible') ){
+					$this.removeClass('open');
+					$accordionData.slideUp(400);
+					e.preventDefault();
+				} else {
+					$accordionTrigger.removeClass('open');
+					$this.addClass('open');
+					$accordionDatabox.slideUp(400);
+					$accordionData.slideDown(400);
+				}
+			})
 		});
 		
-		
-		$('#pagepiling').pagepiling({
-			menu: '#menu',
-			scrollingSpeed:700,
-			navigation: {
-				'textColor': '#f2f2f2',
-				'bulletsColor': '#ffffff',
-				'position': 'right',
-				'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4'],
-			},
-			afterLoad: function(anchorLink, index){
-				setTimeout(function(){ 
-						$('#section1').each(function() {
-							var $this = $(this);
-								$this.find('.animate').each(function(i) {
-									var $item = $(this);
-									var animation = $item.data("animate");
-									setTimeout( function () {
-										$item.addClass('animated '+animation).removeClass('animate');
-									}, i*10 );
-								});
-							});	
-				}, 1100);
-			},
+		/* FullPage Js
+		---------------------------------------------------------------------*/
+     $('#fullpage').fullpage({
+            // Events.
 			onLeave: function(index, nextIndex, direction){
-				//after leaving section 2
-				if(index == 2 && direction == 'down'){
-				   $('.section').eq(index -1).find('.left-section').addClass('fullWidth');
+				if(index==2 && direction=='up'){
+					$('.curtain').hide();	
+				} else {
+					$('.curtain').show();	
+					$('.curtain').addClass('full').removeClass('fullWidth');
+					$('.text-placeholder').html('');  
 				}
-				
-				if(index == 3 && direction == 'up'){
-				   $('.section').eq(index -1).prev('div').find('.left-section').removeClass('fullWidth');
-				}
-	
-				if(index == 1 && direction == 'down'){
-					$('#section1').each(function() {
+			},
+            afterLoad: function(anchorLink, index){
+					setTimeout(function() {
+					$('.curtain').removeClass('fullWidth full');
+					$('.curtain').addClass('xswidth');
+					
+					if (index%2 == 0) { 
+						$('.curtain').addClass('left-align');
+					} else { 
+						$('.curtain').removeClass('left-align');
+					}
+					
+					var $bg = $('.section').eq(index-1).attr('data-rel');
+					$('.curtain').css('background-color',$bg);
+					$('.section').eq(index-1).parents('#fullpage').css('background-color',$bg);
+					
+					text = $('.section').eq(index-1).find('.text-container').html();
+					$('.text-placeholder').html(text);
+					$('.text-placeholder').fadeIn('slow');
+				  },300);
+				  setTimeout(function(){ 
+					$('.text-placeholder').each(function() {
 						var $this = $(this);
-							$this.find('.animated').each(function(i) {
+							$this.find('.animate').each(function(i) {
 								var $item = $(this);
 								var animation = $item.data("animate");
-								$item.removeClass('animated '+animation).addClass('animate');
+								setTimeout( function () {
+									$item.addClass('animated '+animation).removeClass('animate');
+								}, i*100 );
 							});
 						});
-					}
-				},
-				afterRender: function(){
-					setTimeout(function(){ 
-						$('#section1').each(function() {
-							var $this = $(this);
-								$this.find('.animate').each(function(i) {
-									var $item = $(this);
-									var animation = $item.data("animate");
-									setTimeout( function () {
-										$item.addClass('animated '+animation).removeClass('animate');
-									}, i*100 );
-								});
+				}, 500);
+
+            },
+            afterRender: function(){
+            	setTimeout(function(){ 
+					$('.section').eq(0).each(function() {
+						var $this = $(this);
+							$this.find('.animate').each(function(i) {
+								var $item = $(this);
+								var animation = $item.data("animate");
+								setTimeout( function () {
+									$item.addClass('animated '+animation).removeClass('animate');
+								}, i*100 );
 							});
-					}, 400);
-				}
-		});
+						});
+				}, 400);
+			},
+            afterResize: function(){},
+        });
+
+
 /*--------------------------------------------------------------------------------------------------------------------------------------*/		
 	});	
 /*--------------------------------------------------------------------------------------------------------------------------------------*/

@@ -64,8 +64,7 @@
         // constructor
         (function() {
             _this.pos = {};
-            init();
-            console.log(_this);
+            init();            
         })();
 
         function init() {
