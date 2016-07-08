@@ -258,8 +258,8 @@
       $('#fullpage').fullpage({
         // Events.
         onLeave: function(index, nextIndex, direction){
-
-          if (curtain_visibility(index, direction)) {
+		  $('.curtain').find('.card').show();	
+		  if (curtain_visibility(index, direction)) {
             $('.curtain').removeClass('open');
             $('.curtain').addClass('full');
           }
@@ -268,23 +268,25 @@
             $('.curtain').addClass('open');
           }
           $('.text-placeholder').fadeOut('slow');
+		  
         },
         afterLoad: function(anchorLink, index){
+		  $('.curtain').find('.card').show();	
           setTimeout(function() {
             $('.curtain').removeClass('full');
             $('.curtain').toggleClass('white');
             $('.curtain').toggleClass('black');
+			$('.curtain').find('.card').toggleClass('applyflip');
             text = $('.section').eq(index-1).find('.text-container').html();
             $('.text-placeholder').html(text);
             $('.text-placeholder').fadeIn('slow');
           },300);
           setTimeout(function(){
-            $('.text-placeholder').each(function() {
+            $('.curtain').each(function() {
 	            var $this = $(this);
 	            $this.find('.animate').each(function(i) {
 	              var $item = $(this);
-	              var animation = $item.data("animate");
-	              console.log(animation);
+	              var animation = $item.data("animate");	       
 	              setTimeout( function () {
 	                $item.addClass('animated '+animation).removeClass('animate');
 	              }, i*100 );
@@ -293,23 +295,26 @@
           }, 500);
         },
         afterRender: function(index){
-          setTimeout(function() {
+		  $('.curtain').find('.card').hide();		
+		  setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('white');
             $('.curtain').removeClass('black');
-          },300);
+          	
+		  },300);
           setTimeout(function(){
-						$('.section').eq(0).each(function() {
-							var $this = $(this);
-							$this.find('.animate').each(function(i) {
-								var $item = $(this);
-								var animation = $item.data("animate");
-								setTimeout( function () {
-									$item.addClass('animated '+animation).removeClass('animate');
-								}, i*100 );
-							});
-						});
-					}, 400);
+			$('.section').eq(0).each(function() {
+				var $this = $(this);
+				$this.find('.animate').each(function(i) {
+					var $item = $(this);
+					var animation = $item.data("animate");
+					setTimeout( function () {
+						$item.addClass('animated '+animation).removeClass('animate');
+					}, i*100 );
+				});
+			});
+		}, 400);
+		
         },
         afterResize: function(){},
       });
