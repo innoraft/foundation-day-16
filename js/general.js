@@ -257,8 +257,9 @@
    //
       $('#fullpage').fullpage({
         // Events.
+		
         onLeave: function(index, nextIndex, direction){
-		  $('.curtain').find('.card').show();	
+		  $('.curtain').find('.logo-container').show();	
 		  if (curtain_visibility(index, direction)) {
             $('.curtain').removeClass('open');
             $('.curtain').addClass('full');
@@ -267,19 +268,27 @@
             $('.curtain').addClass('full');
             $('.curtain').addClass('open');
           }
-          $('.text-placeholder').fadeOut('slow');
 		  
+		  if(index==2 && direction=='up'){
+			$('.text-placeholder').html('');	  
+		  	$('.text-placeholder').fadeOut('slow');
+		  } else { 
+          	$('.text-placeholder').fadeOut('slow');
+		  }
+		  $('.mouse-icon').removeClass('fadeMouse');
         },
         afterLoad: function(anchorLink, index){
-		  $('.curtain').find('.card').show();	
+		  $('.curtain').find('.logo-container').show();	
           setTimeout(function() {
             $('.curtain').removeClass('full');
             $('.curtain').toggleClass('white');
             $('.curtain').toggleClass('black');
-			$('.curtain').find('.card').toggleClass('applyflip');
+			$('.mouse-icon').toggleClass('blue');
+			$('.curtain').find('.logo-container').toggleClass('applyflip');
             text = $('.section').eq(index-1).find('.text-container').html();
             $('.text-placeholder').html(text);
             $('.text-placeholder').fadeIn('slow');
+			
           },300);
           setTimeout(function(){
             $('.curtain').each(function() {
@@ -292,10 +301,12 @@
 	              }, i*100 );
 	            });
             });
+			
+			$('.mouse-icon').addClass('fadeMouse');
           }, 500);
         },
         afterRender: function(index){
-		  $('.curtain').find('.card').hide();		
+		  $('.curtain').find('.logo-container').hide();		
 		  setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('white');
@@ -337,6 +348,10 @@
           }
         }
       }
+	  
+	  $(document).on('click tap', '.mouse-icon ', function(){
+		 $.fn.fullpage.moveSectionDown();
+	});
 
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
