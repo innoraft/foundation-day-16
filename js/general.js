@@ -166,100 +166,12 @@
 			})
 		});
 
-		/* FullPage Js
-		---------------------------------------------------------------------*/
-   //   $('#fullpage').fullpage({
-   //          // Events.
-			// onLeave: function(index, nextIndex, direction){
-			// 	$('.curtain').addClass('full');
-   //  //     $('.text-placeholder').fadeOut('slow');
-
-			// 	// if(index==2 && direction=='up'){
-			// 	// 	$('.curtain').hide();
-			// 	// } else {
-			// 	// 	$('.curtain').show();
-			// 	// 	$('.curtain').addClass('full').removeClass('fullWidth');
-			// 	// 	$('.text-placeholder').html('');
-			// 	// }
-			// },
-   //    afterLoad: function(anchorLink, index){
-   //    	setTimeout(function() {
-   //        $('.curtain').removeClass('full');
-   //        $('.curtain').toggleClass('white');
-   //        setTimeout(function() {
-	  //         $('.curtain').toggleClass('black');
-	  //       },300);
-
-
-			// 		// text = $('.section').eq(index-1).find('.text-container').html();
-			// 		// $('.text-placeholder').html(text);
-   //   //      $('.text-placeholder').fadeIn('slow');
-   //      },300);
-
-			// 		// setTimeout(function() {
-			// 		// $('.curtain').removeClass('fullWidth full');
-			// 		// $('.curtain').addClass('xswidth');
-
-			// 		// if (index%2 == 0) {
-			// 		// 	$('.curtain').addClass('left-align');
-			// 		// } else {
-			// 		// 	$('.curtain').removeClass('left-align');
-			// 		// }
-
-			// 		// var $bg = $('.section').eq(index-1).attr('data-rel');
-			// 		// $('.curtain').css('background-color',$bg);
-			// 		// $('.section').eq(index-1).parents('#fullpage').css('background-color',$bg);
-
-			// 		// text = $('.section').eq(index-1).find('.text-container').html();
-			// 		// $('.text-placeholder').html(text);
-			// 		// $('.text-placeholder').fadeIn('slow');
-			// 	 //  },300);
-
-
-			// 	 //  setTimeout(function(){
-			// 		// 	$('.text-placeholder').each(function() {
-			// 		// 		var $this = $(this);
-			// 		// 			$this.find('.animate').each(function(i) {
-			// 		// 				var $item = $(this);
-			// 		// 				var animation = $item.data("animate");
-			// 		// 				setTimeout( function () {
-			// 		// 					$item.addClass('animated '+animation).removeClass('animate');
-			// 		// 				}, i*100 );
-			// 		// 			});
-			// 		// 		});
-			// 		// }, 500);
-
-   //        },
-   //        afterRender: function(){
-   //        	setTimeout(function() {
-   //            // $('.curtain').addClass('white');
-   //            // $('.curtain').removeClass('black');
-
-   //     //        text = $('.section').eq(index-1).find('.text-container').html();
-			// 				// $('.text-placeholder').html(text);
-   //     //        $('.text-placeholder').fadeIn('slow');
-   //          },300);
-
-   //    //     	setTimeout(function(){
-			// 				// $('.section').eq(0).each(function() {
-			// 				// 	var $this = $(this);
-			// 				// 	$this.find('.animate').each(function(i) {
-			// 				// 			var $item = $(this);
-			// 				// 			var animation = $item.data("animate");
-			// 				// 			setTimeout( function () {
-			// 				// 				$item.addClass('animated '+animation).removeClass('animate');
-			// 				// }, i*100 );
-			// 			// });
-			// // 		});
-			// // }, 400);
-			// 		},
-   //      });
-   //
       $('#fullpage').fullpage({
         // Events.
+		
         onLeave: function(index, nextIndex, direction){
-
-          if (curtain_visibility(index, direction)) {
+		  $('.curtain').find('.logo-container').show();	
+		  if (curtain_visibility(index, direction)) {
             $('.curtain').removeClass('open');
             $('.curtain').addClass('full');
           }
@@ -267,49 +179,64 @@
             $('.curtain').addClass('full');
             $('.curtain').addClass('open');
           }
-          $('.text-placeholder').fadeOut('slow');
-        },
+		  $('.text-placeholder').html('');	  
+		  $('.mouse-icon').removeClass('fadeMouse');    
+		},
         afterLoad: function(anchorLink, index){
+		  $('.curtain').find('.logo-container').show();	
           setTimeout(function() {
             $('.curtain').removeClass('full');
             $('.curtain').toggleClass('white');
             $('.curtain').toggleClass('black');
+			$('.mouse-icon').toggleClass('blue');
+			
             text = $('.section').eq(index-1).find('.text-container').html();
             $('.text-placeholder').html(text);
             $('.text-placeholder').fadeIn('slow');
+			
           },300);
           setTimeout(function(){
-            $('.text-placeholder').each(function() {
+			$('.curtain').find('.logo-container').toggleClass('applyflip');
+		  },400);
+          setTimeout(function(){
+            $('.curtain').each(function() {
 	            var $this = $(this);
 	            $this.find('.animate').each(function(i) {
 	              var $item = $(this);
-	              var animation = $item.data("animate");
-	              console.log(animation);
+	              var animation = $item.data("animate");	       
 	              setTimeout( function () {
 	                $item.addClass('animated '+animation).removeClass('animate');
 	              }, i*100 );
 	            });
             });
+			if(index==6){
+				$('.mouse-icon').removeClass('fadeMouse');	
+			} else {
+				$('.mouse-icon').addClass('fadeMouse');	
+			}
           }, 500);
         },
         afterRender: function(index){
-          setTimeout(function() {
+		  $('.curtain').find('.logo-container').hide();		
+		  setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('white');
             $('.curtain').removeClass('black');
-          },300);
+			$('.logo-container').removeClass('animated fadeOutLeftBig');          	
+		  },300);
           setTimeout(function(){
-						$('.section').eq(0).each(function() {
-							var $this = $(this);
-							$this.find('.animate').each(function(i) {
-								var $item = $(this);
-								var animation = $item.data("animate");
-								setTimeout( function () {
-									$item.addClass('animated '+animation).removeClass('animate');
-								}, i*100 );
-							});
-						});
-					}, 400);
+			$('.section').eq(0).each(function() {
+				var $this = $(this);
+				$this.find('.animate').each(function(i) {
+					var $item = $(this);
+					var animation = $item.data("animate");
+					setTimeout( function () {
+						$item.addClass('animated '+animation).removeClass('animate');
+					}, i*100 );
+				});
+			});
+		}, 400);
+		
         },
         afterResize: function(){},
       });
@@ -332,6 +259,10 @@
           }
         }
       }
+	  
+	  $(document).on('click tap', '.mouse-icon ', function(){
+		 $.fn.fullpage.moveSectionDown();
+	});
 
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
