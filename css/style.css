@@ -147,8 +147,10 @@ body,html { overflow:hidden; height:1800px; }
 
 .section h1 { display:inline-block; vertical-align:middle; font-family:'Open Sans',Arial, Helvetica, sans-serif; font-size:100px; font-weight:700; line-height:1.25; letter-spacing:0.02em; color:#fff; }
 .section h1 span { display:block; font-size:18px; line-height:1; font-family:'Open Sans', Arial, Helvetica, sans-serif; }
-.title-box { display:inline-block; }
-.title-box h3 { font-size:50px; text-transform:none; font-weight:900; }
+.title-box, .section-info h3 { display:inline-block; }
+.section-info h3, .text-title { font-size:50px; text-transform:none; font-weight:900; }
+
+.section-info-box { min-height:250px; }
 
 .section-container { position:absolute; left:0; top:0; width:100%; height:100%; text-align:center; z-index:15; }
 .section-box { display:table; width:100%; height:100%; }
@@ -169,7 +171,7 @@ body,html { overflow:hidden; height:1800px; }
 .title-container-box.with-number { padding-left:0; position:relative; }
 
 
-#large-header { position:absolute; left:0; top:0; width:100%; height:100%; background:url(../images/bg-1.jpg) 0  0 no-repeat #003352; }
+#large-header { position:absolute; left:0; top:0; width:100%; height:100%; background:url(../images/bg-1.jpg) 0  0 no-repeat #003352; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; }
 #large-header:after { content:""; position:absolute; left:0; top:0; width:100%; z-index:2; height:100%; background:rgba(0,51,82,0.5); }
 #canvas-circle { position:absolute; left:0; top:0; width:100%; height:100%; z-index:10; }
 
@@ -180,24 +182,29 @@ body,html { overflow:hidden; height:1800px; }
 .section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
 .section0 .right-container { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
 
-.section1 .left-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
+.section1 .left-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover;  }
 
-.section2 .right-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; }
+.section2 .right-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; }
 
-.section3 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section3 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover;}
 
-.section4 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
-.section5 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section4 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; }
+.section5 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; }
 .text-container { display:none; }
 
 
 
 /*Logo Animation
 ================================================================================*/
-.logo-container { perspective:1000px; -webkit-perspective:1000px; -moz-perspective:1000px;  -o-perspective:1000px; -ms-perspective:1000px; width:150px; vertical-align:top; position:absolute; display:block; left:20px; top:20px;  }
-.curtain.black .logo-container { left:auto; right:150px; }
+.logo-container { perspective:1000px; -webkit-perspective:1000px; -moz-perspective:1000px;  -o-perspective:1000px; -ms-perspective:1000px; width:150px; vertical-align:top; position:absolute; display:block; left:20px; top:20px; -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition-delay:850ms  }
+.curtain.black .logo-container { left:100%; margin-left:-254px; -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000);  }
+
+.logo-box { opacity:0; }
+.curtain.black .logo-box { -moz-animation:fadeInLogo 1s ease-in; -ms-animation:fadeInLogo 1s ease-in; -o-animation:fadeInLogo 1s ease-in; -webkit-animation:fadeInLogo 1s ease-in; animation:fadeInLogo ease-in 1s 1; -moz-animation-delay:350ms; -ms-animation-delay:350ms; -o-animation-delay:350ms; -webkit-animation-delay:350ms; animation-delay:350ms; -moz-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; opacity:0; }
+.curtain.white .logo-box { -moz-animation:fadeInLogos 1s ease-in; -ms-animation:fadeInLogos 1s ease-in; -o-animation:fadeInLogos 1s ease-in; -webkit-animation:fadeInLogo 1s ease-in; animation:fadeInLogos ease-in 1s 1; -moz-animation-delay:350ms; -ms-animation-delay:350ms; -o-animation-delay:350ms; -webkit-animation-delay:350ms; animation-delay:350ms; -moz-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; opacity:0; }
+
 .logo-container .content { transition:0.5s ease-out; -webkit-transition:0.5s ease-out; -moz-transition:0.5s ease-out; -o-transition:0.5s ease-out; -ms-transition:0.5s ease-out; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; -moz-transform-style:preserve-3d; -o-transform-style:preserve-3d; -ms-transform-style:preserve-3d; /* content backface is visible so that static content still appears */
-backface-visibility:visible; -webkit-backface-visibility:visible; -moz-backface-visibility:visible; -o-backface-visibility:visible; -ms-backface-visibility:visible; width:100%; height:100%; transition-delay:1s; }
+backface-visibility:visible; -webkit-backface-visibility:visible; -moz-backface-visibility:visible; -o-backface-visibility:visible; -ms-backface-visibility:visible; width:100%; height:100%; transition-delay:1s; -webkit-transition-delay:1s; -moz-transition-delay:1s; -ms-transition-delay:1s;-o-transition-delay:1s; }
 .logo-container.applyflip .content { transform:rotateY(180deg); -webkit-transform:rotateY(180deg); -moz-transform:rotateY(180deg); -o-transform:rotateY(180deg); -ms-transform:rotateY(180deg);  }
 .logo-container .content .logoFront, .logo-container .content .logoBack { /* Backface visibility works great for all but IE. As such, we mark the backface visible in IE and manage visibility ourselves */
 backface-visibility:hidden; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -o-backface-visibility:hidden; -ms-backface-visibility:visible; position:absolute; top:0; left:0; height:100%; width:100%; text-align:center; line-height:200px; border-radius:14px; }
@@ -268,4 +275,55 @@ to { visibility:visible; }
  top:25px;
 
 }
+}
+
+
+@-webkit-keyframes fadeInLogo {
+    0% {opacity:1; }
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeInLogo {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-ms-keyframes fadeInLogo {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-o-keyframes fadeInLogo {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeInLogo {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeInLogos {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeInLogos {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-ms-keyframes fadeInLogos {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-o-keyframes fadeInLogos {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeInLogos {
+    0% {opacity:0;}
+    100% {opacity: 1;}
 }
