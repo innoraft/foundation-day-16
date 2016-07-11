@@ -140,6 +140,12 @@ body,html { overflow:hidden; height:1800px; }
 .curtain.open { width:0%; }
 .curtain.full { width:100%; }
 
+.curtain .logo-box {display: none;}
+.curtain.white .logo-white {display: block;}
+.curtain.black .logo-black {display: block;}
+
+.curtain.full .logo-box, .curtain.open .logo-box, .curtain.white.black .logo-box { display: none !important; }
+
 .logo-xs { width:234px; height:auto; position:absolute; left:0; }
 .logo-xs img { width:100%; height:auto; }
 .curtain.black .logo-xs { left:100%; margin-left:-254px; }
@@ -148,7 +154,7 @@ body,html { overflow:hidden; height:1800px; }
 .section h1 { display:inline-block; vertical-align:middle; font-family:'Open Sans',Arial, Helvetica, sans-serif; font-size:100px; font-weight:700; line-height:1.25; letter-spacing:0.02em; color:#fff; }
 .section h1 span { display:block; font-size:18px; line-height:1; font-family:'Open Sans', Arial, Helvetica, sans-serif; }
 .title-box { display:inline-block; }
-.title-box h3 { font-size:50px; text-transform:none; font-weight:900; }
+.title-box h3 { font-size:65px; text-transform:none; font-weight:900; margin-bottom: 50px;}
 
 .section-container { position:absolute; left:0; top:0; width:100%; height:100%; text-align:center; z-index:15; }
 .section-box { display:table; width:100%; height:100%; }
@@ -180,57 +186,68 @@ body,html { overflow:hidden; height:1800px; }
 .section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
 .section0 .right-container { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
 
-.section1 .left-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
+.section1 .right-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
 
-.section2 .right-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; }
+.section2 .left-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; }
 
-.section3 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section3 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
 
-.section4 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
-.section5 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section4 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section5 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
 .text-container { display:none; }
 
 
 
 /*Logo Animation
 ================================================================================*/
-.logo-container { perspective:1000px; -webkit-perspective:1000px; -moz-perspective:1000px;  -o-perspective:1000px; -ms-perspective:1000px; width:150px; vertical-align:top; position:absolute; display:block; left:20px; top:20px;  }
-.curtain.black .logo-container { left:auto; right:150px; }
-.logo-container .content { transition:0.5s ease-out; -webkit-transition:0.5s ease-out; -moz-transition:0.5s ease-out; -o-transition:0.5s ease-out; -ms-transition:0.5s ease-out; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; -moz-transform-style:preserve-3d; -o-transform-style:preserve-3d; -ms-transform-style:preserve-3d; /* content backface is visible so that static content still appears */
-backface-visibility:visible; -webkit-backface-visibility:visible; -moz-backface-visibility:visible; -o-backface-visibility:visible; -ms-backface-visibility:visible; width:100%; height:100%; transition-delay:1s; }
-.logo-container.applyflip .content { transform:rotateY(180deg); -webkit-transform:rotateY(180deg); -moz-transform:rotateY(180deg); -o-transform:rotateY(180deg); -ms-transform:rotateY(180deg);  }
-.logo-container .content .logoFront, .logo-container .content .logoBack { /* Backface visibility works great for all but IE. As such, we mark the backface visible in IE and manage visibility ourselves */
-backface-visibility:hidden; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -o-backface-visibility:hidden; -ms-backface-visibility:visible; position:absolute; top:0; left:0; height:100%; width:100%; text-align:center; line-height:200px; border-radius:14px; }
-.logo-container .content .logoFront, .logo-container.applyflip .content .logoFront { transform:rotateY(0deg); -webkit-transform:rotateY(0deg); -moz-transform:rotateY(0deg); -o-transform:rotateY(0deg); -ms-transform:rotateY(0deg); }
-.logo-container .content .logoBack, .logo-container.applyflip .content .logoBack { transform:rotateY(-180deg); -webkit-transform:rotateY(-180deg); -moz-transform:rotateY(-180deg); -o-transform:rotateY(-180deg); -ms-transform:rotateY(-180deg); }
-.logo-container .content .logoFront, .logo-container.applyflip .content .logoBack { /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
-animation:stayvisible 0.5s both; -webkit-animation:stayvisible 0.5s both; -moz-animation:stayvisible 0.5s both; -o-animation:stayvisible 0.5s both; -ms-animation:donothing 0.5s; -ms-transition:visibility 0s linear 0.17s; visibility:visible; }
-.logo-container.applyflip .content .logoFront, .logo-container .content .logoBack { /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
-animation:stayvisible 0.5s both; -webkit-animation:stayvisible 0.5s both; -moz-animation:stayvisible 0.5s both; -o-animation:stayvisible 0.5s both; -ms-animation:donothing 0.5s; -ms-transition:visibility 0s linear 0.17s; visibility:hidden; }
-@keyframes stayvisible { from {
-visibility:visible;
+.logo-white {
+  float: left;
 }
-to { visibility:visible; }
+.logo-black {
+  float: right;
 }
-@-webkit-keyframes stayvisible { from {
-visibility:visible;
+.logo-box {
+  padding: 10px;
+  perspective: 1000px;
+  transition:all 1s ease-out; -webkit-transition:all 0.5s ease-out; -moz-transition:all 0.5s ease-out; -o-transition:al 0.5s ease-out; -ms-transition:all 0.5s ease-out;
 }
-to { visibility:visible; }
+/* flip the pane when hovered */
+.logo-box.flipped .flipper, .logo-box.flipped .flipper {
+  transform: rotateY(180deg);
 }
-@-moz-keyframes stayvisible { from {
-visibility:visible;
+
+.logo-box, .logoFront, .logoBack {
+  width: 250px;
+  height: 55px;
 }
-to { visibility:visible; }
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
 }
-@-o-keyframes stayvisible { from {
-visibility:visible;
+
+/* hide back of pane during swap */
+.logoFront, .logoBack {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-to { visibility:visible; }
+
+/* front pane, placed above back */
+.logoFront {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
 }
-@-ms-keyframes donothing { 0% {
-}
-100% {
-}
+
+/* back, initially hidden pane */
+.logoBack {
+  transform: rotateY(180deg);
 }
 
 

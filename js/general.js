@@ -167,76 +167,85 @@
 		});
 
       $('#fullpage').fullpage({
+        // scrollingSpeed: 1200,
+
         // Events.
-		
+
         onLeave: function(index, nextIndex, direction){
-		  $('.curtain').find('.logo-container').show();	
-		  if (curtain_visibility(index, direction)) {
-            $('.curtain').removeClass('open');
-            $('.curtain').addClass('full');
-          }
-          else {
-            $('.curtain').addClass('full');
-            $('.curtain').addClass('open');
-          }
-		  $('.text-placeholder').html('');	  
-		  $('.mouse-icon').removeClass('fadeMouse');    
-		},
+          $('.text-placeholder .animated').each(function(index, el) {
+            $(this).attr('class', '');
+            $(this).addClass('animated fadeOutDown');
+          });
+
+    		  // $('.curtain').find('.logo-container').show();
+          setTimeout(function() {
+    		  if (curtain_visibility(index, direction)) {
+                $('.curtain').removeClass('open');
+                $('.curtain').addClass('full');
+              }
+              else {
+                $('.curtain').addClass('full');
+                $('.curtain').addClass('open');
+              }
+          },300);
+    		  // $('.text-placeholder').html('');
+    		  $('.mouse-icon').removeClass('fadeMouse');
+    		},
         afterLoad: function(anchorLink, index){
-		  $('.curtain').find('.logo-container').show();	
           setTimeout(function() {
             $('.curtain').removeClass('full');
             $('.curtain').toggleClass('white');
             $('.curtain').toggleClass('black');
-			$('.mouse-icon').toggleClass('blue');
-			
+    			  $('.mouse-icon').toggleClass('blue');
+
             text = $('.section').eq(index-1).find('.text-container').html();
             $('.text-placeholder').html(text);
             $('.text-placeholder').fadeIn('slow');
-			
+
+            setTimeout(function(){
+              $('.curtain').find('.logo-box').toggleClass('flipped');
+            },300);
+
+            setTimeout(function(){
+              $('.curtain').each(function() {
+  	            var $this = $(this);
+  	            $this.find('.animate').each(function(i) {
+  	              var $item = $(this);
+  	              var animation = $item.data("animate");
+  	              setTimeout( function () {
+  	                $item.addClass('animated '+animation).removeClass('animate');
+  	              }, i*100 );
+  	            });
+              });
+        			if(index==6){
+        				$('.mouse-icon').removeClass('fadeMouse');
+        			} else {
+        				$('.mouse-icon').addClass('fadeMouse');
+        			}
+            }, 1000);
+
           },300);
-          setTimeout(function(){
-			$('.curtain').find('.logo-container').toggleClass('applyflip');
-		  },400);
-          setTimeout(function(){
-            $('.curtain').each(function() {
-	            var $this = $(this);
-	            $this.find('.animate').each(function(i) {
-	              var $item = $(this);
-	              var animation = $item.data("animate");	       
-	              setTimeout( function () {
-	                $item.addClass('animated '+animation).removeClass('animate');
-	              }, i*100 );
-	            });
-            });
-			if(index==6){
-				$('.mouse-icon').removeClass('fadeMouse');	
-			} else {
-				$('.mouse-icon').addClass('fadeMouse');	
-			}
-          }, 500);
         },
         afterRender: function(index){
-		  $('.curtain').find('.logo-container').hide();		
-		  setTimeout(function() {
+    		  setTimeout(function() {
             $('.curtain').addClass('open');
-            $('.curtain').addClass('white');
-            $('.curtain').removeClass('black');
-			$('.logo-container').removeClass('animated fadeOutLeftBig');          	
-		  },300);
-          setTimeout(function(){
-			$('.section').eq(0).each(function() {
-				var $this = $(this);
-				$this.find('.animate').each(function(i) {
-					var $item = $(this);
-					var animation = $item.data("animate");
-					setTimeout( function () {
-						$item.addClass('animated '+animation).removeClass('animate');
-					}, i*100 );
-				});
-			});
-		}, 400);
-		
+            $('.curtain').addClass('black');
+            $('.curtain').removeClass('white');
+    			  // $('.logo-container').removeClass('animated fadeOutLeftBig');
+            setTimeout(function(){
+        			$('.section').eq(0).each(function() {
+        				var $this = $(this);
+        				$this.find('.animate').each(function(i) {
+        					var $item = $(this);
+        					var animation = $item.data("animate");
+        					setTimeout( function () {
+        						$item.addClass('animated '+animation).removeClass('animate');
+        					}, i*100 );
+        				});
+        			});
+        		}, 500);
+          },500);
+
         },
         afterResize: function(){},
       });
@@ -259,7 +268,7 @@
           }
         }
       }
-	  
+
 	  $(document).on('click tap', '.mouse-icon ', function(){
 		 $.fn.fullpage.moveSectionDown();
 	});
