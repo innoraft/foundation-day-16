@@ -3,11 +3,15 @@
 	#mainmenu > ul { display:block !important; }
 }
 
-@media only screen and (max-width:1200px) {
-	#mainmenu > .wrap > ul > li > a { font-size:14px; padding:0 10px; }
-	#mainmenu li { line-height:50px; }
+@media only screen and (max-width:1280px){
+	.title-box h3 { font-size:50px; }	
 }
 
+
+@media only screen and (max-width:1170px) {
+	.title-box h3 { font-size:32px; margin:0 0 30px; }
+	.section-info p { font-size:16px; }	
+}
 
 /*==========================================================================================================*/
 @media only screen and (max-width:1023px) {
@@ -16,7 +20,7 @@
 } 
 
 @media only screen and (max-width:767px) {
-.curtain { height:100%;  background:rgba(0,0,0,.5); }
+.curtain { height:100%;  background:rgba(0,0,0,.75); }
 .curtain.open, .curtain.black.open  { display:none; }
 .curtain.white { background:rgba(255,255,255,.75); width:100%; color:#003352; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
 .curtain.black { background:rgba(0,0,0,.75); left:auto; width:100%; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
@@ -29,20 +33,18 @@
 .curtain.black .logo-black { float:left; }
 .section h1 { font-size:40px; }
 .text-placeholder { padding:0 20px; }
-.section-box { display:block; }
-.title-box { display:block; }
 }
 
-/*==========================================================================================================*/
-@media only screen and (max-width:767px) {
-	
-}
 /*==========================================================================================================*/
 /* only iphone4 landscape & Potriat 300 by 480*/
 @media only screen and (max-width:640px) {
+.section-box { display:block; }
+.title-box { display:block; }
+.section0 .section-box { display:table; }
 }
 
 @media only screen and (max-width:568px) {
+
 }
 /*==========================================================================================================*/
 /* only iphone landscape 340 by 478*/
