@@ -154,7 +154,7 @@ body,html { overflow:hidden; height:1800px; }
 .section h1 { display:inline-block; vertical-align:middle; font-family:'Open Sans',Arial, Helvetica, sans-serif; font-size:100px; font-weight:700; line-height:1.25; letter-spacing:0.02em; color:#fff; }
 .section h1 span { display:block; font-size:18px; line-height:1; font-family:'Open Sans', Arial, Helvetica, sans-serif; }
 .title-box { display:inline-block; }
-.title-box h3 { font-size:65px; text-transform:none; font-weight:900; margin-bottom: 50px;}
+.title-box h3 { font-size:60px; text-transform:none; font-weight:900; margin-bottom: 50px;}
 
 .section-container { position:absolute; left:0; top:0; width:100%; height:100%; text-align:center; z-index:15; }
 .section-box { display:table; width:100%; height:100%; }
@@ -183,23 +183,25 @@ body,html { overflow:hidden; height:1800px; }
 .section0 .logo { width:300px; display:inline-block; margin:0 0 100px; }
 .section0 .logo img { width:100%; height:auto; }
 .section0 .title-right { color:#fff; }
-.section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
-.section0 .right-container { background:url(../images/bg-1.jpg) 0 0 no-repeat; }
+.section0 { background:url(../images/bg-1.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
+.section0 .right-container { background:url(../images/bg-1.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
 
-.section1 .right-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%  }
+.section1 .right-container { background:url(../images/bg2.jpg) 0 0 no-repeat; z-index:10; width:100%; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover;  }
 
-.section2 .left-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; }
+.section2 .left-container {  background:url(../images/team-bg.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
 
-.section3 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section3 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
 
-.section4 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
-.section5 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; }
+.section4 .left-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
+.section5 .right-container {  background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -moz-background-size:cover; -ms-background-size:cover; -webkit-background-size:cover; }
 .text-container { display:none; }
 
 
 
 /*Logo Animation
 ================================================================================*/
+.logo-container:after { content:""; display:table; clear:both;  }
+
 .logo-white {
   float: left;
 }
@@ -225,14 +227,12 @@ body,html { overflow:hidden; height:1800px; }
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
 }
 
 /* hide back of pane during swap */
 .logoFront, .logoBack {
   backface-visibility: hidden;
-
   position: absolute;
   top: 0;
   left: 0;

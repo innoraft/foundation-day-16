@@ -217,33 +217,33 @@
   	              }, i*100 );
   	            });
               });
-        			if(index==6){
-        				$('.mouse-icon').removeClass('fadeMouse');
-        			} else {
-        				$('.mouse-icon').addClass('fadeMouse');
-        			}
+			if(index==6){
+				$('.mouse-icon').removeClass('fadeMouse');
+			} else {
+				$('.mouse-icon').addClass('fadeMouse');
+			}
             }, 1000);
 
           },300);
         },
         afterRender: function(index){
-    		  setTimeout(function() {
+    	setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('black');
             $('.curtain').removeClass('white');
-    			  // $('.logo-container').removeClass('animated fadeOutLeftBig');
+    		// $('.logo-container').removeClass('animated fadeOutLeftBig');
             setTimeout(function(){
-        			$('.section').eq(0).each(function() {
-        				var $this = $(this);
-        				$this.find('.animate').each(function(i) {
-        					var $item = $(this);
-        					var animation = $item.data("animate");
-        					setTimeout( function () {
-        						$item.addClass('animated '+animation).removeClass('animate');
-        					}, i*100 );
-        				});
-        			});
-        		}, 500);
+				$('.section').eq(0).each(function() {
+					var $this = $(this);
+					$this.find('.animate').each(function(i) {
+						var $item = $(this);
+						var animation = $item.data("animate");
+						setTimeout( function () {
+							$item.addClass('animated '+animation).removeClass('animate');
+						}, i*100 );
+					});
+				});
+			}, 500);
           },500);
 
         },

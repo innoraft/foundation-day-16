@@ -16,17 +16,21 @@
 } 
 
 @media only screen and (max-width:767px) {
-.curtain { height:70%;  background:rgba(0,0,0,.75); transform:translateY(-100%); }
+.curtain { height:100%;  background:rgba(0,0,0,.5); }
 .curtain.open, .curtain.black.open  { display:none; }
-.curtain.white { left:0; right:initial; background:rgba(255,255,255,.75); width:100%; color:#003352; transform:translateY(0); -moz-transform:translateY(0);  -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); }
-.curtain.black { background:rgba(0,0,0,.75); left:auto; right:100%; width:100%; color:#ff7900; transform:translateY(100%); -moz-transform:translateY(100%); -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); }
-.section-info h3, .text-title { font-size:24px; }
+.curtain.white { background:rgba(255,255,255,.75); width:100%; color:#003352; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
+.curtain.black { background:rgba(0,0,0,.75); left:auto; width:100%; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
+.title-box h3 { font-size:24px; margin:0 0 10px; }
 .section-info p { font-size:14px; }
 .left-container, .right-container { width:100%; height:100%; }
-.logo-container { position:relative; left:0; top:0; margin:20px 0 20px 20px; }
+.logo-container { position:relative; left:0; top:0; margin:12px 0 20px 5px; }
 .text-placeholder { position:relative; left:0; top:0; padding:30px 20px; }
-.curtain.black .logo-container { left:0;margin:20px 0 20px 20px; }
+.curtain.black .logo-container { left:0;  margin:12px 5px 20px 0; }
+.curtain.black .logo-black { float:left; }
 .section h1 { font-size:40px; }
+.text-placeholder { padding:0 20px; }
+.section-box { display:block; }
+.title-box { display:block; }
 }
 
 /*==========================================================================================================*/
