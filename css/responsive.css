@@ -1,6 +1,6 @@
 /* only ipad 1024 and bigger screen landscape screen */
 @media only screen and (min-width:768px) {
-	#mainmenu > ul { display:block !important; }
+	.triangle-base { top:0 !important; }
 }
 
 @media only screen and (max-width:1280px){
@@ -18,6 +18,9 @@
 @media only screen and (max-width:1023px) {
 	body { min-width:320px; }
 	img{ max-width:100%; width:auto; height:auto; }
+	.triangle-base-05 .hidden span, .triangle-base h3 { font-size:60px; }
+	.triangle-base-05 figure { width:226px; }
+	
 } 
 
 @media only screen and (max-width:767px) {
@@ -25,23 +28,37 @@
 .curtain.open, .curtain.black.open  { display:none; }
 .curtain.white { background:rgba(255,255,255,.75); width:100%; color:#003352; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
 .curtain.black { background:rgba(0,0,0,.75); left:auto; width:100%; transition:all .7s ease-in-out; -webkit-transition:all .7s ease-in-out; -moz-transition:all .7s ease-in-out; -ms-transition:all .7s ease-in-out; }
-.title-box h3 { font-size:24px; margin:0 0 10px; }
+.title-box h3 { font-size:24px; margin:0 0 20px; }
 .section-info p { font-size:14px; }
 .left-container, .right-container { width:100%; height:100%; }
-.logo-container { position:relative; left:0; top:0; margin:12px 0 20px 5px; }
+.logo-container { position:relative; left:0; top:0; margin:12px 0 12px 5px; }
 .text-placeholder { position:relative; left:0; top:0; padding:30px 20px; }
-.curtain.black .logo-container { left:0;  margin:12px 5px 20px 0; }
+.curtain.black .logo-container { left:0;  margin:12px 5px 12px 0; }
 .curtain.black .logo-black { float:left; }
 .section h1 { font-size:40px; }
 .text-placeholder { padding:0 20px; }
+.section-box { display:block; }
+.title-box { display:block; }
+.section0 .section-box { display:table; }
+.section-info blockquote:before, .section-info blockquote:after { opacity:1; }
+.curtain.white .section-info blockquote:before { background:url(../images/quote-blue-left.png) 0 0 no-repeat; transform:scale(0.85); -webkit-transform:scale(0.85); -moz-transform:scale(0.85); -ms-transform:scale(0.85); transform-origin:left top; }
+.curtain.white .section-info blockquote:after { background:url(../images/quote-blue-right.png) 0 0 no-repeat; transform:scale(0.85); -webkit-transform:scale(0.85); -moz-transform:scale(0.85); -ms-transform:scale(0.85); }
+.section-info blockquote { padding:0 20px; }
+.curtain.black .section-info blockquote:before { background:url(../images/quote-orange-left.png) 0 0 no-repeat; transform:scale(0.85); -webkit-transform:scale(0.85); -moz-transform:scale(0.85); -ms-transform:scale(0.85); transform-origin:left top; }
+.curtain.black .section-info blockquote:after { background:url(../images/quote-orange-right.png) 0 0 no-repeat; transform:scale(0.85); -webkit-transform:scale(0.85); -moz-transform:scale(0.85); -ms-transform:scale(0.85); }
+.triangle-base-05 .hidden span, .triangle-base h3 { font-size:24px; line-height:1.65; padding-left:15px; display:block; }
+.triangle-base-05 .hidden.vanishScaleIn { display:block; }
+.triangle-base-05 .hidden { position:absolute; left:0; right:0; margin-top:-32px; }
+.triangle-base-05 .hidden span { padding-left:0; }
+.triangle-base-05 h3 span { color:#000; margin:0 10px; }
+.triangle-base.triangle-base-05.big h3 { margin-top:-100px; }
+.section-info blockquote { display:block; }
+.mouse-icon { bottom:30px; }
 }
 
 /*==========================================================================================================*/
 /* only iphone4 landscape & Potriat 300 by 480*/
 @media only screen and (max-width:640px) {
-.section-box { display:block; }
-.title-box { display:block; }
-.section0 .section-box { display:table; }
 }
 
 @media only screen and (max-width:568px) {

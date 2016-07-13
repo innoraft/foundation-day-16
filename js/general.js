@@ -229,7 +229,7 @@
 			$('.triangle-base').each(function(i) {
 				var i = i*15;
 				$(this).css('left', i+'%');
-			});
+			 });
 
 		}).resize();
 		setTimeout(function() {
@@ -244,18 +244,17 @@
 						var animation = $item.data("animate");
 						setTimeout( function () {
 							$item.addClass('animated '+animation).removeClass('animate');
-						}, i*520);
+						}, i*620);
 					});
-				});
-				
+				});				
 			}, 500);
           },500);
 		  setTimeout(function(){
 			  $('.triangle-base-05').addClass('big');
-		  },4600);
+		  },6600);
 		  setTimeout(function(){
 			  $('.triangle-base-05 .hidden').addClass('animated vanishScaleIn');
-		  },6000);
+		  },7000);
         },
         afterResize: function(){},
       });

@@ -302,10 +302,10 @@ body,html { overflow:hidden; height:1800px; }
 .triangle-base h3 { font-size:80px; font-weight:900; color:#fff; padding-left:30px; vertical-align:middle; }
 .triangle-base.triangle-base-05 h3 { color:#003352; display:inline-block; vertical-align:middle; line-height:1;  }
 .triangle-base-05.big { left:0 !important; text-align:center; }
-.triangle-base-05 .hidden { opacity:0; display:inline-block; color:#003352; vertical-align:top; }
-.triangle-base-05 .hidden span { display:inline-block; vertical-align:middle; line-height:1; font-weight:900; font-size:80px; color:#000; text-transform:uppercase; margin:0 20px; }
+.triangle-base-05 .hidden { display:inline-block; opacity:0;  color:#003352; vertical-align:middle; }
+.triangle-base-05 .hidden span { display:inline-block; vertical-align:top; position:relative; top:-8px; line-height:1; font-weight:900; font-size:82px; color:#000; text-transform:uppercase; margin:0 20px; }
 .triangle-base-05 figure { display:inline-block; vertical-align:middle; }
-.curtain.white .section-info blockquote p { font-style:italic; 	 }
+.curtain.white .section-info blockquote p, .curtain.black .section-info blockquote p { font-style:italic; 	 }
 .section-info blockquote { text-align:center; display:inline-block; position:relative; padding:0 48px; }
 .section-info blockquote:before { position:absolute; left:0; top:0; width:20px; height:28px; background:url(../images/quote-left.png) 0 0 no-repeat; content:""; opacity:0.5; }
 .section-info blockquote:after { position:absolute; right:0; top:0; width:20px; height:28px; background:url(../images/quote-right.png) 0 0 no-repeat; content:""; opacity:0.5; }
