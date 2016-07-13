@@ -178,6 +178,7 @@
           });
 
           setTimeout(function() {
+            $('.text-placeholder').text();
     		  if (curtain_visibility(index, direction)) {
                 $('.curtain').removeClass('open');
                 $('.curtain').addClass('full');
@@ -224,7 +225,13 @@
                 $('.mouse-icon').addClass('fadeMouse');
               }
               if (index==7) {
+                $.fn.fullpage.setMouseWheelScrolling(false);
+                $.fn.fullpage.setAllowScrolling(false);
                 animate_draw_logo();
+                setTimeout(function(){
+                  $.fn.fullpage.setMouseWheelScrolling(true);
+                  $.fn.fullpage.setAllowScrolling(true);
+                }, 5000);
               }
             }, 1000);
 
