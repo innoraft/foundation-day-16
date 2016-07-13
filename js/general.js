@@ -194,7 +194,7 @@
             $('.curtain').removeClass('full');
             $('.curtain').toggleClass('white');
             $('.curtain').toggleClass('black');
-    		$('.mouse-icon').toggleClass('blue');
+    		    $('.mouse-icon').toggleClass('blue');
 
             text = $('.section').eq(index-1).find('.text-container').html();
             $('.text-placeholder').html(text);
@@ -215,49 +215,64 @@
   	              }, i*100 );
   	            });
               });
-			if(index==6){
-				$('.mouse-icon').removeClass('fadeMouse');
-			} else {
-				$('.mouse-icon').addClass('fadeMouse');
-			}
+        			if(index==1 || index==7) {
+        				$('.mouse-icon').removeClass('fadeMouse');
+        			} else {
+        				$('.mouse-icon').addClass('fadeMouse');
+        			}
+              if (index==1 && $('.triangle-base-05').hasClass('big')) {
+                $('.mouse-icon').addClass('fadeMouse');
+              }
+              if (index==7) {
+                animate_draw_logo();
+              }
             }, 1000);
 
           },300);
         },
         afterRender: function(index){
-		$(window).on('resize',function(){
-			$('.triangle-base').each(function(i) {
-				var i = i*15;
-				$(this).css('left', i+'%');
-			 });
 
-		}).resize();
-		setTimeout(function() {
+      		$(window).on('resize',function(){
+      			$('.triangle-base').each(function(i) {
+      				var i = i*15;
+      				$(this).css('left', i+'%');
+      			 });
+
+      		}).resize();
+      		setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('black');
             $('.curtain').removeClass('white');
             setTimeout(function(){
-				$('.section').eq(0).each(function() {
-					var $this = $(this);
-					$this.find('.animate').each(function(i) {
-						var $item = $(this);
-						var animation = $item.data("animate");
-						setTimeout( function () {
-							$item.addClass('animated '+animation).removeClass('animate');
-						}, i*620);
-					});
-				});				
-			}, 500);
+      				$('.section').eq(0).each(function() {
+      					var $this = $(this);
+      					$this.find('.animate').each(function(i) {
+      						var $item = $(this);
+      						var animation = $item.data("animate");
+      						setTimeout( function () {
+      							$item.addClass('animated '+animation).removeClass('animate');
+      						}, i*620);
+      					});
+      				});
+      			}, 500);
           },500);
-		  setTimeout(function(){
-			  $('.triangle-base-05').addClass('big');
-		  },6600);
-		  setTimeout(function(){
-			  $('.triangle-base-05 .hidden').addClass('animated vanishScaleIn');
-		  },7000);
+    		  setTimeout(function(){
+    			  $('.triangle-base-05').addClass('big');
+    		  },4500);
+    		  setTimeout(function(){
+    			  $('.triangle-base-05 .hidden').addClass('animated vanishScaleIn');
+
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+
+            $('.mouse-icon').addClass('fadeMouse');
+    		  },5500);
         },
         afterResize: function(){},
       });
+
+      $.fn.fullpage.setMouseWheelScrolling(false);
+      $.fn.fullpage.setAllowScrolling(false);
 
       function curtain_visibility(index, direction) {
         if (direction == 'down') {
@@ -276,6 +291,32 @@
             return false;
           }
         }
+      }
+
+      init_draw_logo();
+      function init_draw_logo() {
+        paths = $('.logo-big .path');
+        delay = 0;
+        paths.each(function(index, el) {
+          length = $(this).get(0).getTotalLength();
+          speed = parseInt($(this).attr('data-speed'));
+          previousStrokeLength = speed || 0;
+          $(this).css('transition', 'none')
+                 .attr('data-length', length)
+                 .attr('data-delay', delay)
+                 .attr('stroke-dashoffset', length)
+                 .attr('stroke-dasharray', length + ',' + length);
+          delay += previousStrokeLength + 250;
+        });
+      }
+      function animate_draw_logo() {
+        paths = $('.logo-big .path');
+        paths.each(function(index, el) {
+          length = $(this).attr('data-length');
+          speed = $(this).attr('data-speed');
+          delay = $(this).attr('data-delay');
+          $(this).css('transition', 'stroke-dashoffset ' + speed + 'ms ' + delay + 'ms linear').attr('stroke-dashoffset', '0');
+        });
       }
 
 	  $(document).on('click tap', '.mouse-icon ', function(){

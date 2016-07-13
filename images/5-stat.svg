@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+              "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+dth="20in" height="10.4167in"
+viewBox="0 0 43 27">
+  <path id="Unnamed"
+    fill="none" stroke="#464646" stroke-width="5"
+    d="M 9.00,0.00
+    C 9.00,0.00 9.00,27.00 9.00,27.00" />
+  <path id="Unnamed copy"
+    fill="none" stroke="#464646" stroke-width="5"
+    d="M 18.00,0.00
+    C 18.00,0.00 18.00,27.00 18.00,27.00" />
+  <path id="Unnamed copy #1"
+    fill="none" stroke="#464646" stroke-width="5"
+    d="M 27.00,0.00
+    C 27.00,0.00 27.00,27.00 27.00,27.00" />
+  <path id="Unnamed copy #2"
+    fill="none" stroke="#464646" stroke-width="5"
+    d="M 35.00,0.00
+    C 35.00,0.00 35.00,27.00 35.00,27.00" />
+  <path id="Unnamed #1"
+    fill="none" stroke="#ff7900" stroke-width="5"
+    d="M 41.36,4.82
+    C 41.36,4.82 2.09,21.73 2.09,21.73" />
+</svg>

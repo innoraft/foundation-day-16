@@ -122,6 +122,8 @@ body,html { overflow:hidden; height:1800px; }
 
 }
 
+.table-row {display: table-row;}
+.table-cell {display: table-cell;}
 
 .animate { opacity:0; }
 .fullpage-wrapper { width:100%!important; transform:none !important; top:0 !important; }
@@ -285,7 +287,7 @@ body,html { overflow:hidden; height:1800px; }
  top:25px;
 
 }
-} 
+}
 
 
 
@@ -303,9 +305,27 @@ body,html { overflow:hidden; height:1800px; }
 .triangle-base.triangle-base-05 h3 { color:#003352; display:inline-block; vertical-align:middle; line-height:1;  }
 .triangle-base-05.big { left:0 !important; text-align:center; }
 .triangle-base-05 .hidden { display:inline-block; opacity:0;  color:#003352; vertical-align:middle; }
-.triangle-base-05 .hidden span { display:inline-block; vertical-align:top; position:relative; top:-8px; line-height:1; font-weight:900; font-size:82px; color:#000; text-transform:uppercase; margin:0 20px; }
-.triangle-base-05 figure { display:inline-block; vertical-align:middle; }
+.triangle-base-05 .hidden span { display:inline-block; vertical-align:top; position:relative; top:-10px; line-height:1; font-size:80px; color:#828282; text-transform:uppercase; margin:0 40px; }
+.triangle-base-05 figure { display:inline-block; vertical-align:middle; margin-top: -7px; }
 .curtain.white .section-info blockquote p, .curtain.black .section-info blockquote p { font-style:italic; 	 }
 .section-info blockquote { text-align:center; display:inline-block; position:relative; padding:0 48px; }
 .section-info blockquote:before { position:absolute; left:0; top:0; width:20px; height:28px; background:url(../images/quote-left.png) 0 0 no-repeat; content:""; opacity:0.5; }
 .section-info blockquote:after { position:absolute; right:0; top:0; width:20px; height:28px; background:url(../images/quote-right.png) 0 0 no-repeat; content:""; opacity:0.5; }
+
+.final-page {background: #f8f8f8;}
+.logo-big svg { max-width: 30%; display: block; margin: auto; width: 250px; }
+.logo-big img {max-width: 60%; display: block; margin: 20px auto; width: 300px;}
+.celebrate-wrapper {text-align: center; font-size: 30px; margin-top: 8%;}
+.celebrate-text img {width: 55px;margin: 6px 5px;display: inline-block;}
+.celebrate-text span {margin: 0 25px;display: inline-block;}
+.celebrate-text .celebrate-years {margin-left: 0;}
+.celebrate-twins .rotate { display: inline-block; }
+.celebrate-twins .rotate span {margin: 0 10px;}
+
+.share-wrapper {text-align: center;}
+.share {vertical-align: bottom;padding-bottom: 50px;}
+.share .share-text {display: inline-block;border-bottom: 1px solid #bdbdbd;margin-bottom: 15px;padding: 0 10px 6px;}
+.share-links a {display: inline-block;margin: 0 8px;}
+
+.text-orange {color: #ff7900};
+.text-blue {color: #003352;}
