@@ -255,10 +255,10 @@ body,html { overflow:hidden; height:1800px; }
 /* ---------------------------------------------- /*
  * Mouse animate icon
 /* ---------------------------------------------- */
-.mouse-icon { cursor:pointer;  background:#ff7900; border-radius:50%; opacity:0; -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000);  height:45px; width:45px;  position:absolute; left:0; right:0; margin:auto; bottom:30px; z-index:100; transition-delay:550ms; z-index:200;  }
+.mouse-icon { cursor:pointer;  background:#003352; border-radius:50%; opacity:0; -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000);  height:45px; width:45px;  position:absolute; left:0; right:0; margin:auto; bottom:30px; z-index:100; transition-delay:550ms; z-index:200;  }
 .mouse-icon .wheel { -webkit-animation-name:drop; -webkit-animation-duration:1s; -webkit-animation-timing-function:linear; -webkit-animation-delay:0s; -webkit-animation-iteration-count:infinite; -webkit-animation-play-state:running; -webkit-animation-name:drop; animation-name:drop; -webkit-animation-duration:1s; animation-duration:1s; -webkit-animation-timing-function:linear; animation-timing-function:linear; -webkit-animation-delay:0s; animation-delay:0s; -webkit-animation-iteration-count:infinite; animation-iteration-count:infinite; -webkit-animation-play-state:running; animation-play-state:running; }
 .mouse-icon .wheel { position:relative;  width:12px; height:12px;  background:url(../images/down-arrow.png) 0  0 no-repeat; top:4px; margin-left:auto; margin-right:auto; background-size:cover; }
-.blue.mouse-icon { background:#003352 }
+.blue.mouse-icon { background:#ff7900; }
 .mouse-icon.fadeMouse { opacity:1; }
 @-webkit-keyframes drop {  0% {
  top:5px;
@@ -289,10 +289,23 @@ body,html { overflow:hidden; height:1800px; }
 
 
 
-
-.triangle-base-01 { position:absolute; left:0; top:0; background:orange; width:100%; height:100%;  }
-.triangle-base-02 { position:absolute; left:0; top:0; background:green; width:100%; height:100%;  }
-.triangle-base-03 { position:absolute; left:0; top:0; background:blue; width:100%; height:100%;  }
-.triangle-base-04 { position:absolute; left:0; top:0; background:yellow; width:100%; height:100%;  }
-.triangle-base-05 { position:absolute; left:0; top:0; background:pink; width:100%; height:100%;  }
-.triangle-base h3 { font-size:60px; color:#fff; padding-left:30px; }
+.triangle-base .section-box { position:relative; z-index:10; }
+.triangle-base-01 { position:absolute; left:0; top:0; background:url(../images/bg-1.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; width:100%; height:100%;  }
+.triangle-base-01:after,.triangle-base-02:after, .triangle-base-03:after, .triangle-base-04:after { content:""; width:100%; height:100%; background:rgba(0,0,0,.85); position:absolute; left:0; top:0; }
+.triangle-base-02 { position:absolute; left:0; top:0; background:url(../images/bg2.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; width:100%; height:100%; box-shadow:0 0 5px rgba(0,0,0,.85);  }
+.triangle-base-02:after { background:rgba(0,0,0,.65); }
+.triangle-base-03:after { background:rgba(0,0,0,.45); }
+.triangle-base-04:after { background:rgba(0,0,0,.25); }
+.triangle-base-03 { position:absolute; left:0; top:0; background:url(../images/bg4.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; width:100%; height:100%;   box-shadow:0 0 5px rgba(0,0,0,.95); }
+.triangle-base-04 { position:absolute; left:0; top:0; background:url(../images/bg5.jpg) 0 0 no-repeat; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover; -ms-background-size:cover; width:100%; height:100%; box-shadow:0 0 5px rgba(0,0,0,.85);  }
+.triangle-base-05 { position:absolute; left:0; top:0; background:#fff;  width:100%; height:100%;  box-shadow:0 0 5px rgba(0,0,0,1.0); -moz-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -webkit-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -o-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); -ms-transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); transition:all 550ms cubic-bezier(0.450, 1.000, 0.320, 1.000); }
+.triangle-base h3 { font-size:80px; font-weight:900; color:#fff; padding-left:30px; vertical-align:middle; }
+.triangle-base.triangle-base-05 h3 { color:#003352; display:inline-block; vertical-align:middle; line-height:1;  }
+.triangle-base-05.big { left:0 !important; text-align:center; }
+.triangle-base-05 .hidden { opacity:0; display:inline-block; color:#003352; vertical-align:top; }
+.triangle-base-05 .hidden span { display:inline-block; vertical-align:middle; line-height:1; font-weight:900; font-size:80px; color:#000; text-transform:uppercase; margin:0 20px; }
+.triangle-base-05 figure { display:inline-block; vertical-align:middle; }
+.curtain.white .section-info blockquote p { font-style:italic; 	 }
+.section-info blockquote { text-align:center; display:inline-block; position:relative; padding:0 48px; }
+.section-info blockquote:before { position:absolute; left:0; top:0; width:20px; height:28px; background:url(../images/quote-left.png) 0 0 no-repeat; content:""; opacity:0.5; }
+.section-info blockquote:after { position:absolute; right:0; top:0; width:20px; height:28px; background:url(../images/quote-right.png) 0 0 no-repeat; content:""; opacity:0.5; }

@@ -177,7 +177,6 @@
             $(this).addClass('animated fadeOutDown');
           });
 
-    		  // $('.curtain').find('.logo-container').show();
           setTimeout(function() {
     		  if (curtain_visibility(index, direction)) {
                 $('.curtain').removeClass('open');
@@ -188,7 +187,6 @@
                 $('.curtain').addClass('open');
               }
           },300);
-    		  // $('.text-placeholder').html('');
     		  $('.mouse-icon').removeClass('fadeMouse');
     		},
         afterLoad: function(anchorLink, index){
@@ -228,18 +226,16 @@
         },
         afterRender: function(index){
 		$(window).on('resize',function(){
-				$('.triangle-base').css('left',$(window).width()/6);
-				$('.triangle-base').each(function(i) {
-					var i = i*15;
-					$(this).css('margin-left', i+'%');
-				});
+			$('.triangle-base').each(function(i) {
+				var i = i*15;
+				$(this).css('left', i+'%');
+			});
 
 		}).resize();
 		setTimeout(function() {
             $('.curtain').addClass('open');
             $('.curtain').addClass('black');
             $('.curtain').removeClass('white');
-    		// $('.logo-container').removeClass('animated fadeOutLeftBig');
             setTimeout(function(){
 				$('.section').eq(0).each(function() {
 					var $this = $(this);
@@ -248,11 +244,18 @@
 						var animation = $item.data("animate");
 						setTimeout( function () {
 							$item.addClass('animated '+animation).removeClass('animate');
-						}, i*100 );
+						}, i*520);
 					});
 				});
+				
 			}, 500);
           },500);
+		  setTimeout(function(){
+			  $('.triangle-base-05').addClass('big');
+		  },4600);
+		  setTimeout(function(){
+			  $('.triangle-base-05 .hidden').addClass('animated vanishScaleIn');
+		  },6000);
         },
         afterResize: function(){},
       });
