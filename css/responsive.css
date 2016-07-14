@@ -56,7 +56,22 @@
 .mouse-icon { bottom:30px; }
 .logoFront, .logoBack { width:70%; }
 .logoFront img, .logoBack img { width:100%; height:auto; }
- }
+.section5 .section-box { display:table; }
+.celebrate-wrapper { font-size:16px; }
+.celebrate-text img { width:20px; height:auto; }
+.celebrate-twins .rotate { font-size:16px; }
+.celebrate-text span { margin:0; }
+.celebrate-twins { padding:0 0  0 30px; }
+.celebrate-twins > span { top:2px; }
+.logo-big svg { width:70px; max-width:none; }
+.logo-big img { width:128px; max-width:none; }
+.social-button { width:35px; height:35px; line-height:35px; }
+.social-button .fa { font-size:20px; }
+.share .share-text { font-size:14px; margin-bottom:10px; }
+.social-buttons { padding-top:10px; }
+.share-wrapper { bottom:6px; }
+.celebrate-wrapper { margin:30px 0; }
+}
 
 /*==========================================================================================================*/
 /* only iphone4 landscape & Potriat 300 by 480*/
