@@ -142,7 +142,7 @@ body,html { overflow:hidden; height:1800px; }
 .curtain.open { width:0%; }
 .curtain.full { width:100%; }
 
-.curtain .logo-box {display: none;}
+.curtain .logo-box {display: none; position: relative;z-index: 1;}
 .curtain.white .logo-white {display: block;}
 .curtain.black .logo-black {display: block;}
 
@@ -285,23 +285,26 @@ body,html { overflow:hidden; height:1800px; }
 
 .final-page { background:#f8f8f8; }
 .logo-big-container { position:absolute; left:0; top:30px; width:100% }
-.logo-big { display:block; margin-top:-70px; }
+.logo-big {/* display:block; */vertical-align: middle;}
 .logo-big svg { max-width:30%; display:block; margin:auto; width:180px; }
 .logo-big img { max-width:60%; display:block; margin:20px auto; width:300px;}
 .celebrate-wrapper { margin:50px 0; text-align:center; font-size:30px;}
 
-.celebrate-text img { height:auto; width:55px; margin:6px 5px; display:inline-block; vertical-align:middle; }
+.celebrate-text img { height:auto; width:55px; margin:-10px 5px 0; display:inline-block; vertical-align:middle; }
 .celebrate-text span { margin:0 25px; display:inline-block;}
 .celebrate-text .celebrate-years { margin-left:0;}
 .celebrate-twins { position:relative; display:inline-block; padding-left:50px; }
 .celebrate-twins .rotate span { margin:0 10px;}
 
-.share-wrapper { text-align: center; position:absolute;  bottom:20px; left:0; right:0; }
+.share-wrapper { text-align: center; /*position:absolute;  bottom:20px; left:0; right:0;*/ vertical-align: bottom; }
 .share { vertical-align:bottom; padding:0; }
+.share a.site-link {display: block;margin: 20px 0;color: #1e80bb;}
+.share a.site-link:hover {color: #dadada;}
+.share .social-buttons {padding-bottom: 10px;}
 .share .share-text { display:block; text-align:center;  font-weight:700; text-transform:uppercase; margin-bottom:15px; padding:0 10px;}
 .share-links a { display:inline-block; margin:0 8px; }
 
-.text-orange { color:#ff7900};
+.text-orange { color:#ff7900; }
 .text-blue { color:#003352; }
 
 
@@ -325,9 +328,9 @@ body,html { overflow:hidden; height:1800px; }
 
 
 .text-slider.slick-slider { display:inline-block; }
-.celebrate-twins > span { position:absolute; left:0; top:0; }
+.celebrate-twins > span { position:absolute; left:0; top:1px; }
 .slick-vertical .slick-slide, .slick-vertical .slick-slide { float:none !important; width:100% !important; }
-.text-slider .text-slide { display:inline-block; }
+.text-slider .text-slide { display:inline-block; text-align: right;}
 .logo-big-ie { display:none; }
 .logo-big { display:none\9; }
 .logo-big-ie { display:block\9; }
@@ -336,7 +339,7 @@ body,html { overflow:hidden; height:1800px; }
 .mouse-icon .wheel { top:50%\9; margin-top:-6px\9; }
 
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .logo-big { display:none; }
     .logo-big-ie { display:block; }
 

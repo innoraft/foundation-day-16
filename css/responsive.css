@@ -4,13 +4,13 @@
 }
 
 @media only screen and (max-width:1280px){
-	.title-box h3 { font-size:50px; }	
+	.title-box h3 { font-size:50px; }
 }
 
 
 @media only screen and (max-width:1170px) {
 	.title-box h3 { font-size:32px; margin:0 0 30px; }
-	.section-info p { font-size:16px; }	
+	.section-info p { font-size:16px; }
 }
 
 /*==========================================================================================================*/
@@ -20,8 +20,8 @@
 	img{ max-width:100%; width:auto; height:auto; }
 	.triangle-base-05 .hidden span, .triangle-base h3 { font-size:60px; }
 	.triangle-base-05 figure { width:226px; }
-	
-} 
+
+}
 
 @media only screen and (max-width:767px) {
 .curtain { height:100%;  background:rgba(0,0,0,.75); }
@@ -31,13 +31,14 @@
 .title-box h3 { font-size:28px; margin:0 0 20px; }
 .section-info p { font-size:14px; }
 .left-container, .right-container { width:100%; height:100%; }
-.logo-container { position:relative; left:0; top:0; margin:12px 0 6px 5px; }
+.logo-container { position:relative; left:0; top:0; margin:12px 0 6px 5px; min-height: 60px;}
 .text-placeholder { position:relative; left:0; top:0; padding:30px 20px; }
 .curtain.black .logo-container { left:0;  margin:12px 5px 6px 0; }
 .curtain.black .logo-black { float:left; }
 .section h1 { font-size:40px; }
 .text-placeholder { padding:0 20px; }
-.section-box { display:block; }
+.section-box { /*display:block; */}
+.section-info {vertical-align: top; padding-top: 5%;}
 .title-box { display:block; margin-top:-10px; }
 .section0 .section-box { display:table; }
 .section-info blockquote:before, .section-info blockquote:after { opacity:1; }
@@ -57,20 +58,22 @@
 .logoFront, .logoBack { width:70%; }
 .logoFront img, .logoBack img { width:100%; height:auto; }
 .section5 .section-box { display:table; }
-.celebrate-wrapper { font-size:16px; }
-.celebrate-text img { width:20px; height:auto; }
-.celebrate-twins .rotate { font-size:16px; }
+.celebrate-wrapper { font-size:20px; }
+.celebrate-text img { width:40px; margin: -7px 5px 0; }
+.celebrate-twins .rotate { font-size:20px; }
 .celebrate-text span { margin:0; }
 .celebrate-twins { padding:0 0  0 30px; }
-.celebrate-twins > span { top:2px; }
-.logo-big svg { width:70px; max-width:none; }
-.logo-big img { width:128px; max-width:none; }
+.celebrate-twins > span { /*top:2px;*/ }
+.logo-big svg { width:100px; max-width:none; }
+.logo-big img { width:128px; max-width:none;     margin: 0 auto 10px;}
 .social-button { width:35px; height:35px; line-height:35px; }
 .social-button .fa { font-size:20px; }
 .share .share-text { font-size:14px; margin-bottom:10px; }
 .social-buttons { padding-top:10px; }
 .share-wrapper { bottom:6px; }
 .celebrate-wrapper { margin:30px 0; }
+.share a.site-link {margin: 5px 0 0;}
+.section0 .section-info {vertical-align: middle;}
 }
 
 /*==========================================================================================================*/
@@ -89,4 +92,4 @@
 /*==========================================================================================================*/
 /* only iphone portrait 300 by 479*/
 @media only screen and (max-width:479px) {
-} 
+}

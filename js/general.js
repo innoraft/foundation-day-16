@@ -178,18 +178,18 @@
           });
 
           setTimeout(function() {
-            $('.text-placeholder').text();
-    		  if (curtain_visibility(index, direction)) {
-                $('.curtain').removeClass('open');
-                $('.curtain').addClass('full');
-              }
-              else {
-                $('.curtain').addClass('full');
-                $('.curtain').addClass('open');
-              }
-          },300);
-    		  $('.mouse-icon').removeClass('fadeMouse');
-    		},
+            $('.text-placeholder').text('');
+      		  if (curtain_visibility(index, direction)) {
+                  $('.curtain').removeClass('open');
+                  $('.curtain').addClass('full');
+                }
+                else {
+                  $('.curtain').addClass('full');
+                  $('.curtain').addClass('open');
+                }
+            },300);
+      		  $('.mouse-icon').removeClass('fadeMouse');
+      		},
         afterLoad: function(anchorLink, index){
           setTimeout(function() {
             $('.curtain').removeClass('full');
@@ -216,34 +216,37 @@
   	              }, i*100 );
   	            });
               });
-			  if(index==1 || index==7) {
-				$('.mouse-icon').removeClass('fadeMouse');
-			  } else {
-				$('.mouse-icon').addClass('fadeMouse');
-			  }
+      			  if(index==1 || index==7) {
+      				$('.mouse-icon').removeClass('fadeMouse');
+      			  } else {
+      				$('.mouse-icon').addClass('fadeMouse');
+      			  }
               if (index==1 && $('.triangle-base-05').hasClass('big')) {
                 $('.mouse-icon').addClass('fadeMouse');
               }
               if (index==7) {
-                $.fn.fullpage.setMouseWheelScrolling(false);
-                $.fn.fullpage.setAllowScrolling(false);
-                animate_draw_logo();
-                setTimeout(function(){
-                  $.fn.fullpage.setMouseWheelScrolling(true);
-                  $.fn.fullpage.setAllowScrolling(true);
-                }, 5000);
-				setTimeout(function(){
-				  $('.section5').each(function() {
-					var $this = $(this);
-					$this.find('.animate').each(function(i) {
-					  var $item = $(this);
-					  var animation = $item.data("animate");
-					  setTimeout( function () {
-						$item.addClass('animated '+animation).removeClass('animate');
-					  }, i*300 );
-					});
-				  });
-				},5000);
+                if (!$('.logo-big').hasClass('logo-visible')) {
+                  $.fn.fullpage.setMouseWheelScrolling(false);
+                  $.fn.fullpage.setAllowScrolling(false);
+                  animate_draw_logo();
+                  $('.logo-big').addClass('logo-visible');
+                  setTimeout(function(){
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                  }, 5000);
+                }
+        				setTimeout(function(){
+        				  $('.section5').each(function() {
+        					var $this = $(this);
+        					$this.find('.animate').each(function(i) {
+        					  var $item = $(this);
+        					  var animation = $item.data("animate");
+        					  setTimeout( function () {
+        						$item.addClass('animated '+animation).removeClass('animate');
+        					  }, i*300 );
+        					});
+        				  });
+        				},5000);
               }
             }, 1000);
 
@@ -339,20 +342,20 @@
 	  $(document).on('click tap', '.mouse-icon ', function(){
 		 $.fn.fullpage.moveSectionDown();
 	  });
-	  
+
 	  $('.text-slider').slick({
 	  	slidesToShow:1,
 	  	slidesToScroll: 1,
-		vertical:true,
-		adaptiveHeight: true,
-		arrows:false,
-		dots:false,
-		variableWidth:false,
-		verticalSwiping:true,
+  		vertical:true,
+  		adaptiveHeight: true,
+  		arrows:false,
+  		dots:false,
+  		variableWidth:false,
+  		verticalSwiping:true,
 	  	autoplay: true,
 	  	autoplaySpeed: 2000
 	 });
-	  
+
 
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 	});
