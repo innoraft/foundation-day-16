@@ -54,7 +54,8 @@
 .triangle-base-05 h3 span { color:#000; margin:0 10px; }
 .triangle-base.triangle-base-05.big h3 { margin-top:0; }
 .section-info blockquote { display:block; }
-.mouse-icon { bottom:30px; }
+.mouse-icon-wrapper { bottom:30px; width: auto;text-align: center;}
+.mouse-icon.showMouse {position: static;display: inline-block;}
 .logoFront, .logoBack { width:70%; }
 .logoFront img, .logoBack img { width:100%; height:auto; }
 .section5 .section-box { display:table; }
@@ -74,6 +75,7 @@
 .celebrate-wrapper { margin:30px 0; }
 .share a.site-link {margin: 5px 0 0;}
 .section0 .section-info {vertical-align: middle;}
+.section4 .left-container {background-position: 50% 50%;}
 }
 
 /*==========================================================================================================*/
